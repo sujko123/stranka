@@ -11,13 +11,12 @@ const tools = [
 
 const ToolsSection = () => {
   return (
-    <section id="tools" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="tools" className="py-20">
         <h2 className="font-heading text-4xl md:text-5xl font-bold mb-12">
           PREMIUM <span className="text-muted-foreground italic font-light">TOOLS</span>
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {tools.map((tool, i) => (
             <div
               key={i}
@@ -31,7 +30,6 @@ const ToolsSection = () => {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 };

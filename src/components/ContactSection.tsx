@@ -4,8 +4,7 @@ const ContactSection = () => {
   const [budget, setBudget] = useState("");
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
+    <section id="contact" className="py-20">
         <h2 className="font-heading text-4xl md:text-5xl font-bold mb-12 text-center">
           LET'S WORK <span className="text-muted-foreground italic font-light">TOGETHER</span>
         </h2>
@@ -60,7 +59,6 @@ const ContactSection = () => {
             Submit
           </button>
         </form>
-      </div>
     </section>
   );
 };

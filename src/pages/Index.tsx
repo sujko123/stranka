@@ -11,9 +11,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row gap-12 items-start">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
         {/* Sticky left sidebar */}
-        <div className="w-full lg:w-auto lg:sticky lg:top-24 pt-24 flex-shrink-0">
+        <div className="w-full lg:w-auto lg:sticky lg:top-24 pt-20 sm:pt-24 flex-shrink-0">
           <ProfileCard />
         </div>
 
@@ -25,7 +25,7 @@ const Index = () => {
           <ToolsSection />
           <BlogSection />
           <ContactSection />
-          <footer className="py-8 text-center text-muted-foreground text-sm border-t border-border">
+          <footer className="py-6 sm:py-8 text-center text-muted-foreground text-sm border-t border-border">
             © 2024 Aaabad Ahmed. All rights reserved.
           </footer>
         </div>

@@ -16,7 +16,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8 }}
       >
         <span className="text-foreground inline-block hover:text-primary transition-colors duration-300">
-          SOFTWARE
+          Frontend
         </span>
         <br />
         <motion.span
@@ -25,7 +25,7 @@ const HeroSection = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          ENGINEER
+          Developer
         </motion.span>
       </motion.h1>
 

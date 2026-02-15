@@ -1,6 +1,6 @@
 import { Dribbble, Twitter, Instagram, Youtube, Flame } from "lucide-react";
 import { motion } from "framer-motion";
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/ja.png";
 
 const socials = [
   { icon: Dribbble, href: "#" },
@@ -44,7 +44,7 @@ const ProfileCard = () => {
           className="text-xl font-bold font-heading text-foreground mb-1"
           whileHover={{ scale: 1.05 }}
         >
-          Aaabad Ahmed
+          Matej Šujanský
         </motion.h3>
 
         <motion.div

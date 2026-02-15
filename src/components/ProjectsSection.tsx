@@ -10,8 +10,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20">
         <h2 className="font-heading text-4xl md:text-5xl font-bold mb-12">
           RECENT <span className="text-muted-foreground italic font-light">PROJECTS</span>
         </h2>
@@ -37,7 +36,6 @@ const ProjectsSection = () => {
             </a>
           ))}
         </div>
-      </div>
     </section>
   );
 };

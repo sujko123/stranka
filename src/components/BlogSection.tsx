@@ -21,8 +21,7 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20">
         <h2 className="font-heading text-4xl md:text-5xl font-bold mb-12">
           DESIGN <span className="text-muted-foreground italic font-light">THOUGHTS</span>
         </h2>
@@ -48,7 +47,6 @@ const BlogSection = () => {
             </a>
           ))}
         </div>
-      </div>
     </section>
   );
 };

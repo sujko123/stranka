@@ -1,50 +1,44 @@
-import { Dribbble, Twitter, Instagram, Youtube, Flame } from "lucide-react";
+import { Dribbble, X, Instagram, Linkedin, Flame, Github, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImg from "@/assets/ja.png";
+import { useTranslate } from "@/lib/i18n";
 
 const socials = [
-  { icon: Dribbble, href: "#" },
-  { icon: Twitter, href: "#" },
-  { icon: Instagram, href: "#" },
-  { icon: Youtube, href: "#" },
+  { icon: Instagram, href: "https://www.instagram.com/sujanskyyy/" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/matej-%C5%A1ujansk%C3%BD-542915264/?locale=en" },
+  { icon: Github, href: "https://github.com/sujanskyyy" },
+  { icon: Mail, href: "mailto:matejsujansky@gmail.com" },
 ];
 
 const ProfileCard = () => {
+  const { t } = useTranslate();
+
   return (
     <motion.div
-      className="relative w-full max-w-sm mx-auto lg:mx-0"
+      className="relative mx-auto w-full max-w-[20rem] sm:max-w-sm lg:mx-0"
       initial={{ opacity: 0, x: -40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       {/* Animated dashed border */}
       <motion.div
-        className="absolute -top-4 -left-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] border-2 border-dashed border-primary/40 rounded-3xl pointer-events-none"
-        animate={{ rotate: [0, 1, -1, 0] }}
+        className="pointer-events-none absolute -left-2 -top-2 h-[calc(100%+1rem)] w-[calc(100%+1rem)] rounded-3xl border-2 border-dashed border-primary/40 sm:-left-4 sm:-top-4 sm:h-[calc(100%+2rem)] sm:w-[calc(100%+2rem)]"
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="bg-card rounded-2xl p-6 flex flex-col items-center relative z-10 backdrop-blur-sm">
+      <div className="relative z-10 flex flex-col items-center rounded-2xl bg-card p-5 backdrop-blur-sm sm:p-6">
         {/* Profile image with glow */}
         <motion.div
-          className="relative mb-4 w-40 h-48 sm:w-48 sm:h-56 overflow-hidden rounded-xl"
-          whileHover={{ scale: 1.05, rotate: 2 }}
+          className="relative mb-4 h-44 w-36 overflow-hidden rounded-xl sm:h-56 sm:w-48"
           transition={{ type: "spring", stiffness: 300 }}
         >
           <div className="absolute inset-0 bg-primary/30 mix-blend-multiply rounded-xl" />
           <div className="absolute -inset-1 bg-gradient-to-br from-primary/50 to-secondary/50 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-          <img
-            src={profileImg}
-            alt="Profile"
-            className="w-full h-full object-cover rounded-xl"
-          />
+          <img src={profileImg} alt="Profile" className="w-full h-full object-cover rounded-xl" />
         </motion.div>
 
-        <motion.h3
-          className="text-xl font-bold font-heading text-foreground mb-1"
-          whileHover={{ scale: 1.05 }}
-        >
-          Matej Šujanský
+        <motion.h3 className="mb-1 text-center font-heading text-xl font-bold text-foreground">
+          {t("profile.name")}
         </motion.h3>
 
         <motion.div
@@ -55,8 +49,8 @@ const ProfileCard = () => {
           <Flame className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]" size={24} />
         </motion.div>
 
-        <p className="text-muted-foreground text-center text-sm leading-relaxed mb-5">
-          A Software Engineer who has developed countless innovative solutions.
+        <p className="mb-5 text-center text-sm leading-relaxed text-muted-foreground">
+          {t("profile.bio")} <br /> {t("profile.study")} <br /> {t("profile.building")}
         </p>
 
         <div className="flex items-center gap-4">
@@ -64,7 +58,7 @@ const ProfileCard = () => {
             <motion.a
               key={i}
               href={social.href}
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="text-muted-foreground transition-colors duration-300 hover:text-primary"
               whileHover={{ scale: 1.3, y: -4 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, y: 20 }}

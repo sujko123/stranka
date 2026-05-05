@@ -31,7 +31,7 @@ const BlogSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        DESIGN <span className="text-muted-foreground italic font-light">THOUGHTS</span>
+        Moja cesta k  <span className="text-muted-foreground italic font-light">programovaniu</span>
       </motion.h2>
 
       <div className="space-y-4">

@@ -1,68 +1,83 @@
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { motion } from "framer-motion";
+import { useTranslate } from "@/lib/i18n";
 
 const ContactSection = () => {
-  const [budget, setBudget] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const { t } = useTranslate();
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mvzlawlq", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
-    <section id="contact" className="py-16 sm:py-20">
+    <section id="contact" className="scroll-mt-24 py-12 sm:py-16 md:py-20">
       <motion.h2
-        className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12 text-center"
+        className="mb-8 text-center font-heading text-3xl font-bold leading-tight sm:mb-10 sm:text-4xl md:text-5xl"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        LET'S WORK <span className="text-muted-foreground italic font-light">TOGETHER</span>
+        {t("contact.headingMain")} <br></br>{" "}
+        <span className="text-muted-foreground italic font-light">{t("contact.headingAccent")}</span>
       </motion.h2>
 
       <motion.form
-        className="space-y-4 sm:space-y-5"
-        onSubmit={(e) => e.preventDefault()}
+        className="mx-auto max-w-2xl space-y-4 sm:space-y-5"
+        onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         {[
-          { label: "Name", type: "text", placeholder: "Your name" },
-          { label: "Email", type: "email", placeholder: "your@email.com" },
+          { label: t("contact.name"), name: "name", type: "text", placeholder: t("contact.namePlaceholder") },
+          { label: t("contact.email"), name: "email", type: "email", placeholder: t("contact.emailPlaceholder") },
         ].map((field, i) => (
           <motion.div
-            key={field.label}
+            key={field.name}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 + i * 0.1 }}
           >
-            <label className="block text-sm text-muted-foreground mb-2">{field.label}</label>
+            <label className="mb-2 block text-sm text-muted-foreground">{field.label}</label>
             <input
+              name={field.name}
               type={field.type}
-              className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_15px_hsl(var(--primary)/0.2)] transition-all"
+              required
+              className="w-full rounded-xl border border-border bg-card px-4 py-3 text-foreground transition-all placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_15px_hsl(var(--primary)/0.2)]"
               placeholder={field.placeholder}
             />
           </motion.div>
         ))}
 
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-        >
-          <label className="block text-sm text-muted-foreground mb-2">Budget</label>
-          <select
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-            className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_15px_hsl(var(--primary)/0.2)] transition-all appearance-none"
-          >
-            <option value="">Select…</option>
-            <option value="<3k">&lt;$3k</option>
-            <option value="3k-5k">$3k - $5k</option>
-            <option value="5k-10k">$5k - $10k</option>
-            <option value=">10k">&gt;$10k</option>
-          </select>
-        </motion.div>
+       
 
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -70,22 +85,33 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <label className="block text-sm text-muted-foreground mb-2">Message</label>
+          <label className="mb-2 block text-sm text-muted-foreground">{t("contact.message")}</label>
           <textarea
+            name="message"
             rows={4}
-            className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_15px_hsl(var(--primary)/0.2)] transition-all resize-none"
-            placeholder="Tell me about your project…"
+            required
+            className="w-full resize-none rounded-xl border border-border bg-card px-4 py-3 text-foreground transition-all placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_15px_hsl(var(--primary)/0.2)]"
+            placeholder={t("contact.messagePlaceholder")}
           />
         </motion.div>
 
         <motion.button
           type="submit"
-          className="w-full bg-primary text-primary-foreground font-heading font-semibold py-3 rounded-xl transition-opacity"
+          disabled={status === "sending"}
+          className="w-full rounded-xl bg-primary py-3 font-heading font-semibold text-primary-foreground transition-opacity disabled:cursor-not-allowed disabled:opacity-60"
           whileHover={{ scale: 1.02, boxShadow: "0 0 25px hsl(var(--primary) / 0.5)" }}
           whileTap={{ scale: 0.98 }}
         >
-          Submit
+          {status === "sending" ? t("contact.sending") : t("contact.submit")}
         </motion.button>
+
+        {status === "success" && (
+          <p className="text-center text-sm font-medium text-primary">{t("contact.success")}</p>
+        )}
+
+        {status === "error" && (
+          <p className="text-center text-sm font-medium text-destructive">{t("contact.error")}</p>
+        )}
       </motion.form>
     </section>
   );

@@ -6,7 +6,7 @@ import { useTranslate } from "@/lib/i18n";
 const socials = [
   { icon: Instagram, href: "https://www.instagram.com/sujanskyyy/" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/matej-%C5%A1ujansk%C3%BD-542915264/?locale=en" },
-  { icon: Github, href: "https://github.com/sujanskyyy" },
+  { icon: Github, href: "https://github.com/sujko123" },
   { icon: Mail, href: "mailto:matejsujansky@gmail.com" },
 ];
 

@@ -17,7 +17,7 @@ const experiences = [
     positionKey: "experience.slates.position",
     bulletKeys: ["experience.slates.bullet1", "experience.slates.bullet2", "experience.slates.bullet3"],
     periodKey: "experience.slates.period",
-    company: "Slates Platform",
+    company: "Hanya CO.",
   },
   {
     positionKey: "experience.support.position",

@@ -48,7 +48,7 @@ const translations = {
     "experience.freelance.bullet3":
       "Zlepšujem internú komunikáciu vo firmách vývojom interných aplikácií na mieru.",
     "experience.freelance.bullet4": "Pracujem flexibilne podľa požiadaviek a času zákazníka.",
-    "experience.slates.position": "IT helpdesk / Frontend dev.",
+    "experience.slates.position": "Frontend dev. / IT helpdesk",
     "experience.slates.period": "Január 2026 - súčasnosť",
     "experience.slates.bullet1": "Správa serverov a databáz s využitím jazyka SQL.",
     "experience.slates.bullet2": "Vývoj internej webovej aplikácie pomocou knižnice React.",
@@ -158,7 +158,7 @@ const translations = {
     "experience.freelance.bullet3":
       "I improve internal communication in companies by building custom internal applications.",
     "experience.freelance.bullet4": "I work flexibly around customer requirements and timelines.",
-    "experience.slates.position": "IT helpdesk / Frontend dev.",
+    "experience.slates.position": "Frontend dev. / IT helpdesk",
     "experience.slates.period": "January 2026 - present",
     "experience.slates.bullet1": "Server and database administration using SQL.",
     "experience.slates.bullet2": "Development of an internal web application with React.",

@@ -4,8 +4,8 @@ import { useTranslate } from "@/lib/i18n";
 
 const stats = [
   { value: "+6", labelKey: "hero.stat1.label", sublabelKey: "hero.stat1.sublabel" },
-  { value: "+30", labelKey: "hero.stat2.label", sublabelKey: "hero.stat2.sublabel" },
-  { value: "+40", labelKey: "hero.stat3.label", sublabelKey: "hero.stat3.sublabel" },
+  { value: "+20", labelKey: "hero.stat2.label", sublabelKey: "hero.stat2.sublabel" },
+  { value: "+30", labelKey: "hero.stat3.label", sublabelKey: "hero.stat3.sublabel" },
 ] as const;
 
 const HeroSection = () => {

@@ -1,10 +1,10 @@
-import { Dribbble, X, Instagram, Linkedin, Flame, Github, Mail } from "lucide-react";
+import { Instagram, Linkedin, Flame, Github, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import profileImg from "@/assets/ja.png";
 import { useTranslate } from "@/lib/i18n";
 
 const socials = [
-  { icon: Instagram, href: "https://www.instagram.com/sujanskyyy/" },
+  
   { icon: Linkedin, href: "https://www.linkedin.com/in/matej-%C5%A1ujansk%C3%BD-542915264/?locale=en" },
   { icon: Github, href: "https://github.com/sujko123" },
   { icon: Mail, href: "mailto:matejsujansky@gmail.com" },
@@ -58,6 +58,7 @@ const ProfileCard = () => {
             <motion.a
               key={i}
               href={social.href}
+              aria-label={social.icon === Mail ? "Email" : social.icon === Github ? "GitHub" : social.icon === Linkedin ? "LinkedIn" : "Instagram"}
               className="text-muted-foreground transition-colors duration-300 hover:text-primary"
               whileHover={{ scale: 1.3, y: -4 }}
               whileTap={{ scale: 0.9 }}

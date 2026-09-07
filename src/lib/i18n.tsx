@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from "react";
+import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
 
 type Language = "sk" | "en";
 
@@ -12,14 +12,14 @@ const translations = {
     "nav.toggle": "EN",
 
     "profile.name": "Matej Šujanský",
-    "profile.bio": "Frontend dev. Freelancer",
-    "profile.study": "Management & Informatics @ VUT",
-    "profile.building": "Building cool stuff with React",
+    "profile.bio": "Web developer & freelancer",
+    "profile.study": "Bc. · Manažérska informatika @ VŠE",
+    "profile.building": "Weby, UI a React aplikácie",
 
     "hero.titleTop": "Web",
     "hero.titleBottom": "Developer",
     "hero.description":
-      "Tvorím webové stránky a platformy, ktoré firmám pomáhajú rásť tým, že im uľahčujú každodenné fungovanie, zvyšujú predaj a oslovujú viac zákazníkov.",
+      "Tvorím webové stránky a aplikácie, ktoré firmám pomáhajú rásť tým, že im uľahčujú každodenné fungovanie, zvyšujú predaj a oslovujú viac zákazníkov.",
     "hero.stat1.label": "ROKOV TVORÍM",
     "hero.stat1.sublabel": "WEBY",
     "hero.stat2.label": "ÚSPEŠNÝCH",
@@ -92,7 +92,7 @@ const translations = {
     "timeline.coding.description":
       "Kódovaniu sa venujem od začiatku strednej školy, kde som sa zúčastnil aj súťaže v Python/Tkinter. Do sveta webov som sa naplno dostal v roku 2020, keď som prvýkrát vytvoril web pre rodinnú firmu.",
     "timeline.started.title": "Vysoká škola",
-    "timeline.started.description": "Momentálne študujem informatiku a management na VUT v Brne.",
+    "timeline.started.description": "Momentálne študujem informatiku a management na VŠE v Prahe.",
     "timeline.present.title": "Súčasnosť",
     "timeline.present.description": "V súčasnosti sa okrem freelance práce snažím zdokonaliť svoje schopnosti v rámci komplexnejších, projektoch ktoré sám vytváram. Taktiež hľadám nové pracovné možnosti, ktoré mi dajú priestor uplatniť to čo viem, a zároveň ma naučia aké je to pracovať na väčších projektoch v tíme.",
 
@@ -122,14 +122,14 @@ const translations = {
     "nav.toggle": "SK",
 
     "profile.name": "Matej Šujanský",
-    "profile.bio": "Frontend dev. Freelancer",
-    "profile.study": "Management & Informatics @ VUT",
-    "profile.building": "Building cool stuff with React",
+    "profile.bio": "Web developer & freelancer",
+    "profile.study": "Bc. · Managerial Informatics @ VŠE",
+    "profile.building": "Websites, UI and React apps",
 
     "hero.titleTop": "Web",
     "hero.titleBottom": "Developer",
     "hero.description":
-      "I build websites and platforms that help businesses grow by making everyday operations easier, increasing sales, and reaching more customers.",
+      "I build websites and applications that help businesses grow by making everyday operations easier, increasing sales, and reaching more customers.",
     "hero.stat1.label": "YEARS BUILDING",
     "hero.stat1.sublabel": "WEBSITES",
     "hero.stat2.label": "SUCCESSFUL",
@@ -235,6 +235,7 @@ const TranslateContext = createContext<TranslateContextValue | null>(null);
 
 export const TranslateProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>("sk");
+  useEffect(() => { document.documentElement.lang = language; }, [language]);
 
   const value = useMemo<TranslateContextValue>(
     () => ({

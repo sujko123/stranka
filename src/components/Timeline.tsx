@@ -50,7 +50,7 @@ const Timeline = () => {
     year: event.year,
     title: t(event.titleKey),
     description: t(event.descriptionKey),
-    highlight: event.highlight,
+    highlight: "highlight" in event ? event.highlight : undefined,
   }));
 
   return (

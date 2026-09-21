@@ -5,6 +5,7 @@ import mimosa from "@/assets/mimosa.jpeg";
 import marekFranc from "@/assets/marekfranc.png";
 import betrStudio from "@/assets/betrstudio.png";
 import secretMenu from "@/assets/secret-menu.png";
+import kajaWeb from "@/assets/kajaweb.png";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useTranslate } from "@/lib/i18n";
 import { text, upcomingProjects, type Project } from "@/lib/portfolio";
@@ -13,6 +14,7 @@ import { useCopy } from "@/hooks/use-portfolio-copy";
 
 const projects: Project[] = [
   { id: "secret-menu", title: "Secret Menu", image: secretMenu, description: text("Platformu som vytvoril ako interné riešenie pre sukromnú spoločnosť. Slúži na tvorbu digitálnych menu, správu ponuky a zákazníckych interakcií.", "I built this platform as an internal solution for a private company. It supports digital menu creation, offer management and customer interactions."), stack: ["Next.js", "TypeScript", "Fastify", "PostgreSQL", "Prisma", "Resend", "Render", "UI/UX"], status: "live", category: "platform" },
+  { id: "emocja", title: "Emocja.sk", image: kajaWeb, url: "https://emocja.sk/", description: text("Webová stránka s platobnou bránou a Resend integráciou", "The Emocja.sk website with a payment gateway and Resend integration."), stack: [], status: "live", category: "platform" },
   { id: "sao", title: "SAO Optika", image: sao, url: "https://www.saooptika.sk/", description: text("Webová prezentácia očnej optiky.", "A website for an optical store."), stack: [], status: "live", category: "personal" },
   { id: "mimoza", title: "Mimóza Gelato", image: mimosa, url: "https://www.mimoza.sk/", description: text("Web pre bratislavskú kaviareň a gelato.", "A website for a Bratislava café and gelato shop."), stack: [], status: "live", category: "personal" },
   { id: "mf", title: "Marek Franc", image: marekFranc, url: "https://www.marekfranc.cz/", description: text("Osobná webová prezentácia.", "A personal website."), stack: [], status: "live", category: "personal" },
@@ -29,7 +31,7 @@ export default function ProjectsSection() {
   return <section id="projects" className="dev-section">
     <SectionHeading number="02" label="recent-work" title={c("Nápady, ktoré", "Ideas that")} accent={c("žijú online.", "live online.")} />
     <div className="projects-toolbar"><div className="project-filters">{[
-      ["all", c("Všetky", "All")], ["personal", c("Personálne weby", "Personal websites")], ["platform", c("Platformy", "Platforms")],
+      ["all", c("Všetky", "All")], ["personal", c("Personálne weby", "Personal websites")], ["platform", c("Funkcie", "Features")],
     ].map(([id, label]) => <button key={id} className={filter === id ? "selected" : ""} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}<span>{id === "all" ? projects.length : projects.filter(p => p.category === id).length}</span></button>)}</div><FolderGit2 size={19} className="text-muted-foreground hidden sm:block" /></div>
     <div className="project-grid">{filtered.map(project => <Reveal key={project.id}>
       <button type="button" className={"project-card " + (project.status === "placeholder" ? "project-placeholder" : "")} onClick={() => setSelected(project)}>

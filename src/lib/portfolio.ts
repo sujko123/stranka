@@ -8,17 +8,17 @@ export const text = (sk: string, en: string): LocalText => ({ sk, en });
 // Source: Matej's CV. Dates refer to employment, not first contact with coding.
 export const experiences = [
  
-  { id: "freelance", company: "Freelance", role: "Web developer", period: text("01/2023 — súčasnosť", "01/2023 — present"), active: true,
-    summary: text("20+ webov. Každý s vlastnou identitou.", "20+ websites. Each with its own identity."),
-    detail: text("Tvorím weby na mieru vizuálnej identite a hodnotám značky. Podľa projektu pracujem s JavaScriptom a Reactom alebo editormi Framer a GHL. Vo vlastných projektoch rozširujem skúsenosti aj o backend.", "I build websites tailored to each brand's visual identity and values. Depending on the project, I use JavaScript and React or editors such as Framer and GHL. My personal projects also let me explore backend development."),
+  { id: "freelance", company: "Freelance", role: "Web developer", period: text("2023 — súčasnosť", "2023 — present"), active: true,
+    summary: text("Od analýzy požiadaviek po nasadenie riešenia.", "From requirements analysis to launch."),
+    detail: text("Analyzujem požiadavky klientov, navrhujem štruktúru, funkcionality a používateľské rozhranie webových riešení. Počas celého projektu samostatne komunikujem s klientmi, vyvíjam webové stránky a aplikácie, testujem ich a nasadzujem hotové riešenia.", "I analyse client requirements and design the structure, functionality and user interface of web solutions. Throughout the project, I communicate directly with clients, develop websites and applications, test them and deploy the finished solution."),
     stack: ["React", "Next.js", "Tailwind CSS", "Figma", "REST API", "Vercel"] },
-     { id: "slates", company: "Slates App", role: "Frontend dev / Software helper", period: text("02/2026 — 08/2026", "02/2026 — 08/2026"), active: false,
-    summary: text("Frontend pre kastingový startup.", "Frontend for a casting startup."),
-    detail: text("Pomáhal som riešiť zmeny a problémy na klientskej strane platformy a vytváral frontendové komponenty. Pri práci som využíval aj databázové nástroje.", "I help resolve changes and issues on the client side of the platform and build frontend components, also working with database tools."),
+  { id: "slates", company: "Slates App", role: "Application Developer", period: text("03/2026 — 08/2026", "03/2026 — 08/2026"), active: false,
+    summary: text("Kastingový startup.", "Casting startup."),
+    detail: text("Ako Application Developer som sa podieľal na vývoji a úpravách webovej aplikácie. Pracoval som s klientskou časťou platformy, komponentmi rozhrania a databázovými nástrojmi.", "As an Application Developer, I contributed to the development and maintenance of a web application. I worked on the client side of the platform, UI components and database tools."),
     stack: ["React", "JavaScript", "Supabase", "Docker", "SQL"] },
-  { id: "hanya", company: "Hanya Corporation", role: "IT helpdesk / Frontend dev", period: text("04/2025 — 05/2026", "04/2025 — 05/2026"), active: false,
-    summary: text("Od SQL dát po internú AI aplikáciu.", "From SQL data to an internal AI application."),
-    detail: text("V Brne som spravoval hardvér, servery a databázy. Vyhľadával som dáta a vytváral SQL tabuľky, analyzoval výstupy v Exceli a Power BI. V tíme som sa podieľal na vývoji internej aplikácie na hodnotenie kvality telefonických operátorov pomocou AI.", "In Brno, I maintained hardware, servers and databases. I queried data, created SQL tables and analysed results in Excel and Power BI. In a team, I worked on an internal application using AI to evaluate call operator quality."),
+  { id: "hanya", company: "Hanya Corporation", role: "IT helpdesk | Data analyst", period: text("03/2025 — 05/2026", "03/2025 — 05/2026"), active: false,
+    summary: text("Dáta, IT riešenia a používateľská podpora.", "Data, IT solutions and user support."),
+    detail: text("Analyzoval som dáta pomocou SQL dotazov a pripravoval výstupy v Power BI a Exceli. V rámci firemného projektu som vytváral React komponenty, konzultoval vhodné IT riešenia a poskytoval používateľskú podporu pri technických problémoch.", "I analysed data using SQL queries and prepared reports in Power BI and Excel. As part of a company project, I built React components, consulted on suitable IT solutions and provided user support for technical issues."),
     stack: ["React", "SQL", "Power BI", "Excel", "Git", "GitHub"] },
   { id: "arval", company: "Arval Competence Center", role: "IT Helpdesk / IT support", period: text("05/2023 — 09/2023 · 05/2024 — 08/2024", "05/2023 — 09/2023 · 05/2024 — 08/2024"), active: false,
     summary: text("Technológie, ktoré ľuďom uľahčujú prácu.", "Technology that makes people's work easier."),
@@ -37,5 +37,5 @@ export type Project = {
 export const upcomingProjects: Project[] = [
   { id: "project-04", title: "SUBO", image: subo, url: "https://subo.sk/", description: text("Web pre bratislavskú pekáreň s focacciami, koláčmi a výberovou kávou.", "A website for a Bratislava bakery offering focaccia, pastries and specialty coffee."), stack: [], status: "live", category: "personal" },
   { id: "project-05", title: "Sunyhouse", image: sunyhouse, url: "https://www.sunyhouse.cz/", description: text("Webová prezentácia koktailového baru v Břeclavi.", "A website for a cocktail bar in Břeclav."), stack: [], status: "live", category: "personal" },
-  { id: "project-06", title: "Project_06", description: text("Miesto pre ďalší projekt. Jeho príbeh doplním čoskoro.", "A space for my next project. Its story is coming later."), stack: [], status: "placeholder", category: "platform" },
+
 ];

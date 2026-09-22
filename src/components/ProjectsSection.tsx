@@ -31,7 +31,7 @@ export default function ProjectsSection() {
   return <section id="projects" className="dev-section">
     <SectionHeading number="02" label="recent-work" title={c("Nápady, ktoré", "Ideas that")} accent={c("žijú online.", "live online.")} />
     <div className="projects-toolbar"><div className="project-filters">{[
-      ["all", c("Všetky", "All")], ["personal", c("Personálne weby", "Personal websites")], ["platform", c("Funkcie", "Features")],
+      ["all", c("Všetky", "All")], ["personal", c("Personálne weby", "Personal websites")], ["platform", c("Systémy", "Systems")],
     ].map(([id, label]) => <button key={id} className={filter === id ? "selected" : ""} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}<span>{id === "all" ? projects.length : projects.filter(p => p.category === id).length}</span></button>)}</div><FolderGit2 size={19} className="text-muted-foreground hidden sm:block" /></div>
     <div className="project-grid">{filtered.map(project => <Reveal key={project.id}>
       <button type="button" className={"project-card " + (project.status === "placeholder" ? "project-placeholder" : "")} onClick={() => setSelected(project)}>

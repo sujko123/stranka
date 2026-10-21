@@ -8,22 +8,22 @@ export const text = (sk: string, en: string): LocalText => ({ sk, en });
 // Source: Matej's CV. Dates refer to employment, not first contact with coding.
 export const experiences = [
  
-  { id: "freelance", company: "Freelance", role: "Web developer", period: text("2023 — súčasnosť", "2023 — present"), active: true,
-    summary: text("Od analýzy požiadaviek po nasadenie riešenia.", "From requirements analysis to launch."),
-    detail: text("Analyzujem požiadavky klientov, navrhujem štruktúru, funkcionality a používateľské rozhranie webových riešení. Počas celého projektu samostatne komunikujem s klientmi, vyvíjam webové stránky a aplikácie, testujem ich a nasadzujem hotové riešenia.", "I analyse client requirements and design the structure, functionality and user interface of web solutions. Throughout the project, I communicate directly with clients, develop websites and applications, test them and deploy the finished solution."),
-    stack: ["React", "Next.js", "Tailwind CSS", "Figma", "REST API", "Vercel"] },
-  { id: "slates", company: "Slates App", role: "Application Developer", period: text("03/2026 — 08/2026", "03/2026 — 08/2026"), active: false,
-    summary: text("Kastingový startup.", "Casting startup."),
-    detail: text("Ako Application Developer som sa podieľal na vývoji a úpravách webovej aplikácie. Pracoval som s klientskou časťou platformy, komponentmi rozhrania a databázovými nástrojmi.", "As an Application Developer, I contributed to the development and maintenance of a web application. I worked on the client side of the platform, UI components and database tools."),
-    stack: ["React", "JavaScript", "Supabase", "Docker", "SQL"] },
-  { id: "hanya", company: "Hanya Corporation", role: "IT helpdesk | Data analyst", period: text("03/2025 — 05/2026", "03/2025 — 05/2026"), active: false,
-    summary: text("Dáta, IT riešenia a používateľská podpora.", "Data, IT solutions and user support."),
-    detail: text("Analyzoval som dáta pomocou SQL dotazov a pripravoval výstupy v Power BI a Exceli. V rámci firemného projektu som vytváral React komponenty, konzultoval vhodné IT riešenia a poskytoval používateľskú podporu pri technických problémoch.", "I analysed data using SQL queries and prepared reports in Power BI and Excel. As part of a company project, I built React components, consulted on suitable IT solutions and provided user support for technical issues."),
-    stack: ["React", "SQL", "Power BI", "Excel", "Git", "GitHub"] },
-  { id: "arval", company: "Arval Competence Center", role: "IT Helpdesk / IT support", period: text("05/2023 — 09/2023 · 05/2024 — 08/2024", "05/2023 — 09/2023 · 05/2024 — 08/2024"), active: false,
-    summary: text("Technológie, ktoré ľuďom uľahčujú prácu.", "Technology that makes people's work easier."),
-    detail: text("Počas dvoch období v Arvale som riešil používateľskú podporu, správu a konfiguráciu zariadení, firemný hardvér, migráciu používateľského prostredia, výmenu komponentov a zapájanie switchov. Súčasťou práce bolo aj školenie zamestnancov v nových funkciách a aplikáciách a hľadanie praktických riešení pod časovým tlakom.", "Across two periods at Arval, I handled user support, device management and configuration, company hardware, user environment migration, component replacement and switch setup. I also trained employees on new features and applications and solved practical issues under time pressure."),
-    stack: ["Hardware", "Networking", "User support", "Troubleshooting", "Configuration"] },
+  { id: "freelance", company: "Freelance", role: "Full-stack developer", period: text("2023 — súčasnosť", "2023 — present"), active: true,
+    summary: text("25+ webov a aplikácií od zadania po nasadenie.", "25+ websites and apps from requirements to deployment."),
+    detail: text("Dodávam webové stránky a aplikácie pre malé firmy. Samostatne riešim rozsah projektu, UX, vývoj, testovanie, hosting aj komunikáciu s klientom. Vytvoril som aj SecretMenu — QR platformu pre reštaurácie s digitálnym menu, objednávkami pri stole, zľavami a kupónmi.", "I deliver websites and web applications for small businesses. I own scoping, UX, development, testing, hosting and client communication. I also built SecretMenu, a QR-based restaurant platform with digital menus, table orders, discounts and coupons."),
+    stack: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"] },
+  { id: "slates", company: "Slates App", role: "Full-stack developer", period: text("02/2026 — 10/2026", "Feb 2026 — Oct 2026"), active: false,
+    summary: text("Vývoj, testovanie a údržba produkčnej platformy.", "Building, testing and maintaining a production platform."),
+    detail: text("Vyvíjal som nové funkcie a redizajnoval rozhranie produkčnej webovej platformy — od databázy a API až po frontend. Riešil som chyby a bezpečnostné problémy nahlásené používateľmi a QA a udržiaval kvalitu kódu pomocou unit a end-to-end testov, code review a automatizovaných CI kontrol.", "I developed features and redesigned a production web platform from the database and API to the frontend. I fixed bugs and security issues reported by users and QA, and maintained code quality with unit and end-to-end tests, code review and automated CI checks."),
+    stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Drizzle", "Vitest", "Playwright", "Docker"] },
+  { id: "hanya", company: "Hanya CO.", role: "Frontend developer / IT Helpdesk", period: text("03/2025 — 05/2026", "Mar 2025 — May 2026"), active: false,
+    summary: text("React, reporting a podpora používateľov.", "React, reporting and user support."),
+    detail: text("Vyvíjal som a udržiaval React komponenty pre internú firemnú aplikáciu. Automatizoval som prevádzkové reporty pomocou SQL a Power BI, čím som nahradil manuálne exporty z Excelu. Riešil som aj používateľské požiadavky a pomáhal odhaľovať opakujúce sa problémy.", "I developed and maintained React components for an internal business application. I automated operational reporting with SQL and Power BI, replacing manual Excel exports. I also resolved user requests and helped identify recurring issues."),
+    stack: ["React", "SQL", "Power BI", "IT support"] },
+  { id: "arval", company: "Arval Competence Center", role: "IT support", period: text("letá 2023 a 2024", "Summers 2023 & 2024"), active: false,
+    summary: text("Prvá línia podpory pre používateľov a zariadenia.", "First-line support for users and devices."),
+    detail: text("Poskytoval som prvú líniu podpory pri problémoch s hardvérom, softvérom, používateľskými prístupmi a sieťou. Konfiguroval som zariadenia zamestnancov a pomáhal so základnou správou siete.", "I provided first-line support for hardware, software, user-access and network issues. I configured employee devices and supported basic network administration."),
+    stack: ["Hardware", "Software", "Access management", "Networking"] },
 ];
 
 export type Project = {

@@ -12,14 +12,14 @@ const translations = {
     "nav.toggle": "EN",
 
     "profile.name": "Matej Šujanský",
-    "profile.bio": "Web developer & freelancer",
-    "profile.study": "Bc. · Manažérska informatika @ VŠE",
-    "profile.building": "Weby, UI a React aplikácie",
+    "profile.bio": "Full-stack developer",
+    "profile.study": "Študent · Business Informatics @ VŠE",
+    "profile.building": "TypeScript, React, Next.js, NestJS",
 
     "hero.titleTop": "Web",
     "hero.titleBottom": "Developer",
     "hero.description":
-      "Tvorím webové stránky a aplikácie, ktoré firmám pomáhajú rásť tým, že im uľahčujú každodenné fungovanie, zvyšujú predaj a oslovujú viac zákazníkov.",
+      "Full-stack developer a študent Business Informatics na VŠE v Prahe. Dodávam produkčné webové aplikácie od požiadaviek po nasadenie — s dôrazom na kvalitu kódu, testovanie a používateľský zážitok.",
     "hero.stat1.label": "ROKOV TVORÍM",
     "hero.stat1.sublabel": "WEBY",
     "hero.stat2.label": "ÚSPEŠNÝCH",
@@ -122,14 +122,14 @@ const translations = {
     "nav.toggle": "SK",
 
     "profile.name": "Matej Šujanský",
-    "profile.bio": "Web developer & freelancer",
-    "profile.study": "Bc. · Managerial Informatics @ VŠE",
-    "profile.building": "Websites, UI and React apps",
+    "profile.bio": "Full-stack developer",
+    "profile.study": "Business Informatics student @ VŠE",
+    "profile.building": "TypeScript, React, Next.js, NestJS",
 
     "hero.titleTop": "Web",
     "hero.titleBottom": "Developer",
     "hero.description":
-      "I build websites and applications that help businesses grow by making everyday operations easier, increasing sales, and reaching more customers.",
+      "A full-stack developer and Business Informatics student at VŠE Prague. I deliver production web applications from requirements to deployment, with a focus on code quality, testing and user experience.",
     "hero.stat1.label": "YEARS BUILDING",
     "hero.stat1.sublabel": "WEBSITES",
     "hero.stat2.label": "SUCCESSFUL",

@@ -6,6 +6,7 @@ import marekFranc from "@/assets/marekfranc.png";
 import betrStudio from "@/assets/betrstudio.png";
 import secretMenu from "@/assets/secret-menu.png";
 import kajaWeb from "@/assets/kajaweb.png";
+import shopifyFakturacia from "@/assets/shopify-fakturacia.png";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useTranslate } from "@/lib/i18n";
 import { text, upcomingProjects, type Project } from "@/lib/portfolio";
@@ -15,6 +16,7 @@ import { useCopy } from "@/hooks/use-portfolio-copy";
 const projects: Project[] = [
   { id: "secret-menu", title: "SecretMenu", image: secretMenu, description: text("QR platforma pre reštaurácie s digitálnym menu, objednávkami pri stole, gamifikovanými zľavami a následnými kupónmi.", "A QR-based restaurant platform with digital menus, table orders, gamified discounts and follow-up coupons."), stack: ["Next.js", "TypeScript", "Fastify", "PostgreSQL", "Prisma", "Resend", "Render", "UI/UX"], status: "live", category: "platform" },
   { id: "emocja", title: "Emocja.sk", image: kajaWeb, url: "https://emocja.sk/", description: text("Webová stránka s platobnou bránou a Resend integráciou", "The Emocja.sk website with a payment gateway and Resend integration."), stack: [], status: "live", category: "platform" },
+  { id: "shopify-fakturacia", title: "ShopifyFakturacia.sk", image: shopifyFakturacia, url: "https://shopifyfakturacia.sk/", description: text("Automatické API prepojenie Shopify a KROS Fakturácie, ktoré z objednávky vytvorí a odošle faktúru bez ručného prepisovania.", "An automated API integration between Shopify and KROS Fakturácia that creates and sends invoices from orders without manual data entry."), stack: ["Shopify API", "KROS Fakturácia API", "Automatizácia"], status: "live", category: "platform" },
   { id: "sao", title: "SAO Optika", image: sao, url: "https://www.saooptika.sk/", description: text("Webová prezentácia očnej optiky.", "A website for an optical store."), stack: [], status: "live", category: "personal" },
   { id: "mimoza", title: "Mimóza Gelato", image: mimosa, url: "https://www.mimoza.sk/", description: text("Web pre bratislavskú kaviareň a gelato.", "A website for a Bratislava café and gelato shop."), stack: [], status: "live", category: "personal" },
   { id: "mf", title: "Marek Franc", image: marekFranc, url: "https://www.marekfranc.cz/", description: text("Osobná webová prezentácia.", "A personal website."), stack: [], status: "live", category: "personal" },
